@@ -1,0 +1,69 @@
+@import "../styles.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  align-content: center;
+  background-color: $background-color;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: $background-gradient;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0.5;
+    opacity: 0.6;
+  }
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.snow {
+  $total: 200;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  pointer-events: none;
+  color: $gold;
+
+  @for $i from 1 through $total {
+    $random-blur: random(1);
+    $random-x: random(1000000) * 0.0001vw;
+    $random-offset: random_range(-100000, 100000) * 0.0001vw;
+    $random-x-end: $random-x + $random-offset;
+    $random-x-end-yoyo: $random-x + ($random-offset / 2);
+    $random-yoyo-time: random_range(30000, 80000) / 100000;
+    $random-yoyo-y: $random-yoyo-time * 100vh;
+    $random-scale: random(40000) * 0.0001;
+    $fall-duration: random_range(30, 10) * 3s;
+    $fall-delay: random(30) * -2s;
+    &:nth-child(#{$i}) {
+      opacity: random(9000) * 0.0001;
+      transform: translate($random-x, 10px) scale($random-scale);
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+      filter: blur(#{$random-blur}px);
+    }
+
+    @keyframes fall-#{$i} {
+      #{percentage($random-yoyo-time)} {
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+      }
+
+      to {
+        transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+      }
+    }
+  }
+}

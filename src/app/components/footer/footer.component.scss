@@ -1,0 +1,36 @@
+@import "../../../styles.scss";
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  height: 5rem;
+
+  @include font-p-small;
+  letter-spacing: 1.1px;
+
+  & > * {
+    display: flex;
+    margin-left: 0.5rem;
+    color: $gold;
+  }
+
+  svg {
+    align-self: center;
+    height: 2rem;
+    width: 2rem;
+    fill: $gold;
+    color: $background-color;
+  }
+
+  & a {
+    color: $gold;
+    text-decoration: none;
+    transition: all 1s;
+  }
+  & a:hover {
+    color: $gold-dark;
+  }
+}

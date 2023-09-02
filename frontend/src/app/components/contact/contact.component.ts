@@ -21,11 +21,12 @@ export class ContactComponent {
 
   onSubmit() {
     // Set headers to allow form data
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
+    const formData = new FormData();
+    formData.append('name', this.formData.name);
+    formData.append('email', this.formData.email);
+    formData.append('message', this.formData.message);
 
-    this.http.post(this.apiUrl, this.formData, { headers }).subscribe(
+    this.http.post(this.apiUrl, formData).subscribe(
       (response) => {
         console.log('Form submission successful', response);
         console.log(this.formData);

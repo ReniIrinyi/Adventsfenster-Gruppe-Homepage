@@ -47,8 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->SMTPAuth = $smtpAuth;
         $mail->Username = $smtpUsername;
         $mail->Password = $smtpPassword;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        //implicit TLS encrypton
-        // $mail->SMTPSecure = 'tls'; //  TLS encryption
+        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        //implicit TLS encrypton =>dont work
+        $mail->SMTPSecure = 'tls'; //  TLS encryption
         $mail->Port = $smtpPort;
 
         

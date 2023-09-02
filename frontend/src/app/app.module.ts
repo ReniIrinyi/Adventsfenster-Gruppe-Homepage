@@ -18,6 +18,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ArchivComponent } from './components/archiv/archiv.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'calender', component: CalenderComponent },
@@ -51,6 +55,9 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     NgFor,
     FormsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

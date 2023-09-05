@@ -1,1 +1,20 @@
-<p>map works!</p>
+<div>
+  <google-map
+    *ngIf="apiLoaded | async"
+    height="400px"
+    width="750px"
+    [center]="center"
+    [zoom]="zoom"
+  >
+    <map-marker
+      class="star-marker"
+      *ngFor="let markerPosition of markerPositions; let i = index"
+      [position]="markerPosition"
+      [options]="markerOptions"
+      (mapClick)="openGoogleMaps(markerPosition)"
+      [label]="(i + 1).toString()"
+    >
+      ></map-marker
+    >
+  </google-map>
+</div>

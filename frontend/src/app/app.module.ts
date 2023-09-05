@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgFor } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CountdownComponent } from './components/countdown/countdown.component';
 import { CalenderComponent } from './components/calender/calender.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { NgIf } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { MapComponent } from './components/map/map.component';
@@ -18,9 +18,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ArchivComponent } from './components/archiv/archiv.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
+import { MatCardModule } from '@angular/material/card';
+import { SparkleComponent } from './components/sparkle/sparkle.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { InfosComponent } from './components/infos/infos.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -35,12 +41,15 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CalenderComponent,
-
     HomeComponent,
     MapComponent,
     ContactComponent,
     FooterComponent,
     ArchivComponent,
+    CountdownComponent,
+    SparkleComponent,
+    MapComponent,
+    InfosComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,14 +59,16 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
-    NgIf,
     RouterModule.forRoot(appRoutes),
     FontAwesomeModule,
-    NgFor,
     FormsModule,
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
+    MatMenuModule,
+    GoogleMapsModule,
+    HttpClientJsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

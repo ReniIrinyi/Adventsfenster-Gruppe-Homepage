@@ -1,5 +1,48 @@
-<div id="home" class="home-container">
-  <h1>25 Jahre</h1>
-  <h1>Adventsfenster-Gruppe Bottenwil</h1>
-  <p>hier entsteht bald ein magisches Homepage</p>
+<div
+  [ngClass]="{ 'home-container-bigScreen': !isSmallScreen }"
+  id="home"
+  class="home-container"
+>
+  <div>
+    <h2>25 Jahre</h2>
+    <h1>Adventsfenster-Gruppe Bottenwil</h1>
+  </div>
+  <div>
+    <p>
+      Die Adventsfenstergruppe ist eine freiwillige Gemeinschaft von Einwohnern
+      aus Bottenwil, die bereits seit 25 Jahren besteht. Ihr Ziel ist es,
+      Bottenwil in der Adventszeit mit schön gestalteten Adventsfenstern zu
+      verschönern und die Anwohner zusammenzubringen.
+    </p>
+    <div class="buttons">
+      <button class="btn share-button" [matMenuTriggerFor]="shareMenu">
+        <fa-icon [icon]="faGift"></fa-icon>
+        Teile die Freude
+      </button>
+      <mat-menu #shareMenu="matMenu">
+        <button mat-menu-item (click)="shareOnFacebook()">Facebook</button>
+        <button mat-menu-item (click)="shareOnTwitter()">Twitter</button>
+        <button mat-menu-item (click)="shareOnWhatsApp()">WhatsApp</button>
+        <!-- Add more social media options as needed -->
+      </mat-menu>
+      <a class="btn btn-a" href="#contact">Sage uns Hallo</a>
+    </div>
+  </div>
+
+  <div class="sponsor-container">
+    <h3>unsere Sponsoren</h3>
+
+    <a
+      target="_blank"
+      href="{{ sponsorenLinks[currentSponsorIndex] }}"
+      class="sponsor-image"
+    >
+      <img
+        [ngClass]="{ 'sponsor-image-img-bigScreen': !isSmallScreen }"
+        class="sponsor-image-img"
+        [src]="sponsorenUrls[currentSponsorIndex]"
+        alt=""
+      />
+    </a>
+  </div>
 </div>

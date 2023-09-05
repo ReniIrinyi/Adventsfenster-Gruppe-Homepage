@@ -1,11 +1,48 @@
-$background-color: rgb(2, 10, 34);
+//COLORS
+
+//TEXT-COLORS
+$text-dark: #2b2c2d;
+
+//BACKGROUND-COLORS
+$background-color-grey: rgb(39, 41, 49);
+$background-color-light: rgb(20, 30, 57);
+$background-color: #020a22;
 $background-color-dark: #020a22;
 $background-gradient: radial-gradient(
   50% 60% at 50% 0%,
-  rgb(33, 54, 107) 0%,
+  #21366b 0%,
   rgba(0, 72, 255, 0) 100%
 );
 
+//GREY
+
+//TRANSPARENT
+$grey-light-transparent: #ffffff16;
+$grey-regular-transparent: #ffffff35;
+$grey-dark-transparent: rgba(11, 10, 10, 0.501);
+
+//BLUE
+
+//TRANSPARENT
+
+//GOLD
 $gold-gradient: (315deg, rgb(182, 164, 119) 0%, rgb(247, 218, 145) 100%);
-$gold: #ffe9ad;
+$gold-light: #ffe9ad;
 $gold-dark: rgb(188, 171, 123);
+$gold: #f7da91;
+
+//TRANSPARENT
+$gold-regular-transparent: #fad26ae5;
+$gold-light-transparent: #f7da91e5;
+
+//BOX-SHADOW
+@mixin box-shadow-inset {
+  background-color: $background-color;
+  -webkit-box-shadow: inset -17px -9px 41px 10px rgba(255, 251, 251, 0.08);
+  box-shadow: inset -17px -9px 41px 10px rgba(255, 251, 251, 0.05);
+}
+@mixin box-shadow-inset-dark {
+  background-color: $background-color;
+  -webkit-box-shadow: inset -17px -9px 41px 10px rgba(14, 14, 14, 0.08);
+  box-shadow: inset -17px -9px 41px 10px rgba(1, 1, 1, 0.281);
+}

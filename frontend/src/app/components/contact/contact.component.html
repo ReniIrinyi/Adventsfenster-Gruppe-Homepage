@@ -1,34 +1,41 @@
-<form (submit)="onSubmit()">
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="Name"
-      [(ngModel)]="formData.name"
-      name="name"
-      required
-    />
-  </mat-form-field>
+<div class="contact-container" id="contact">
+  <h2>Wir freuen uns über jedes Feedback</h2>
+  <p>Setzen Sie sich mit uns über das Kontaktformular in Verbindung.</p>
+  <app-sparkle></app-sparkle>
+  <form (submit)="onSubmit()">
+    <mat-form-field>
+      <input
+        class="input-element"
+        matInput
+        placeholder="Name"
+        [(ngModel)]="formData.name"
+        name="name"
+        required
+      />
+    </mat-form-field>
 
-  <mat-form-field>
-    <input
-      matInput
-      type="email"
-      placeholder="Email"
-      [(ngModel)]="formData.email"
-      name="email"
-      required
-    />
-  </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="email"
+        placeholder="Email"
+        [(ngModel)]="formData.email"
+        name="email"
+        required
+      />
+    </mat-form-field>
 
-  <mat-form-field>
-    <textarea
-      matInput
-      placeholder="Message"
-      [(ngModel)]="formData.message"
-      name="message"
-      required
-    ></textarea>
-  </mat-form-field>
+    <mat-form-field>
+      <textarea
+        class="input-element"
+        matInput
+        placeholder="Message"
+        [(ngModel)]="formData.message"
+        name="message"
+        required
+      ></textarea>
+    </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit">Submit</button>
-</form>
+    <button class="btn" type="submit">Senden</button>
+  </form>
+</div>

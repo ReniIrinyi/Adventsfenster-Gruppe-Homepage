@@ -1,0 +1,28 @@
+@import "../../../styles.scss";
+
+.infos {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+h1 {
+  @include font-h1-Tangerine;
+  margin: 1rem;
+}
+h3 {
+  @include font-h3;
+  margin: 1rem;
+  text-align: center;
+}
+
+p {
+  margin: 0.5rem 0rem;
+  @include font-p;
+}
+
+strong {
+  color: #dcdcdc;
+}

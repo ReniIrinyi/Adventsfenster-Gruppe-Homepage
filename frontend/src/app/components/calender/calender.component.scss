@@ -1,0 +1,267 @@
+@import "../../../styles.scss";
+.calender-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+h1 {
+  @include font-h1-Tangerine;
+}
+h2 {
+  @include font-p;
+  text-align: center;
+}
+.header {
+  position: relative;
+
+  &-klein {
+    position: relative;
+    padding: 2rem 2rem;
+  }
+}
+
+.calender {
+  padding: 2rem 0 2rem 0;
+  display: grid;
+  grid-template-rows: repeat(11, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  width: 80%;
+
+  &-elements {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background-color: $background-color-grey;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.499);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 0.2rem;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transform-origin: left center;
+    &-bigScreen {
+      padding: 5rem;
+    }
+
+    img.enlarged {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: zoom-in;
+    }
+  }
+
+  &-elements:first-of-type {
+    grid-row: 1/3;
+  }
+  &-elements:nth-of-type(5) {
+    grid-row: 2/4;
+    grid-column: 3/4;
+  }
+  &-elements:nth-of-type(6) {
+    grid-column: 1/3;
+  }
+  &-elements:nth-of-type(7) {
+    grid-column: 1/3;
+  }
+  &-elements:nth-of-type(12) {
+    grid-row: 6/8;
+  }
+  &-elements:nth-of-type(17) {
+    grid-column: 1/3;
+  }
+  &-elements:nth-of-type(18) {
+    grid-row: 8/10;
+    grid-column: 3/4;
+  }
+  &-elements:nth-of-type(23) {
+    grid-column: 1/3;
+  }
+  &-elements:nth-of-type(24) {
+    padding: 1rem 2rem;
+    grid-row: 10/13;
+    grid-column: 3/4;
+  }
+}
+.window {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  @include box-shadow-inset;
+
+  & .text {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  & .stars {
+    color: $gold;
+    font-size: 10px;
+    z-index: 1;
+    align-self: flex-end;
+  }
+  p {
+    @include font-p-calender;
+    margin: 0rem 1rem 0 1rem;
+    @include respond(small-phone, landscape) {
+      margin: 1rem 0rem 1rem 1rem;
+    }
+    @include respond(medium-phone, landscape) {
+      margin: 1rem 0rem 1rem 1rem;
+    }
+    @include respond(large-phone, portrait) {
+      margin: 1rem 0rem 1rem 1rem;
+    }
+    @include respond(large-phone, landscape) {
+      margin: 1rem 0rem 1rem 1rem;
+    }
+    @include respond(tablet, portrait) {
+      margin: 1rem 0rem 1rem 1rem;
+    }
+    @include respond(tablet, portrait) {
+      margin: 1rem 0rem 1rem 1rem;
+    }
+    @include respond(desktop) {
+      margin: 1rem 0rem 1rem 1rem;
+    }
+  }
+
+  &:hover {
+    background-color: $background-color-light;
+  }
+  &.opened {
+    transform: perspective(1000px) rotateY(0deg) scale(0);
+    left: -50%;
+    transition: transform 0.3s ease;
+  }
+  &.closed {
+    transform: perspective(1000px) rotateY(-80deg) scale(1.1);
+    transition: transform 0.3s ease;
+  }
+}
+
+.calender-elements:nth-child(6) .window,
+.calender-elements:nth-child(9) .window,
+.calender-elements:nth-child(11) .window,
+.calender-elements:nth-child(18) .window,
+.calender-elements:nth-child(19) .window,
+.calender-elements:nth-child(23) .window {
+  background: $gold-dark;
+  background-color: $gold-dark;
+  &:hover {
+    background-color: $gold;
+  }
+  & p {
+    color: $text-dark;
+  }
+
+  & .stars {
+    color: $text-dark;
+  }
+}
+
+.window::before {
+  content: "";
+  position: absolute;
+  clip-path: circle(10.7% at 100% 50%);
+  @include box-shadow-inset-dark;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  right: 0;
+  top: 10%;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right center;
+}
+.window::after {
+  content: "";
+  position: absolute;
+  clip-path: circle(10.8% at 100% 49.5%);
+  background: $gold-dark;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  right: 0;
+  top: 10%;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: right center;
+}
+.content {
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    top: 0;
+  }
+}
+.full-screen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $grey-dark-transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1000;
+
+  &-bigScreen {
+    justify-content: center;
+  }
+}
+
+.full-screen-image-container {
+  position: relative;
+  max-width: 99%;
+  max-height: 90%;
+
+  &-bigScreen {
+    max-width: 80%;
+  }
+}
+
+.full-screen-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  background-color: $grey-light-transparent;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}

@@ -1,1 +1,59 @@
-
+<div
+  [ngClass]="{ 'calender-container-bigScreen': !isSmallScreen }"
+  class="calender-container"
+>
+  <div class="header">
+    <h1>Adventsfenster</h1>
+    <app-sparkle></app-sparkle>
+  </div>
+  <app-countdown></app-countdown>
+  <app-map></app-map>
+  <div class="header-klein">
+    <h1>Online-Adventsfenster</h1>
+    <app-sparkle></app-sparkle>
+  </div>
+  <h2>
+    Sie können die Adventsfenster nicht persönlich besuchen? Ab diesem Jahr
+    können Sie die Freude am Öffnen eines Fensters auch online erleben. Klicken
+    Sie auf das aktuelle Datum im untenstehenden Kalender.
+  </h2>
+  <div
+    (click)="closeFullScreenImage(); $event.stopPropagation()"
+    class="calender"
+  >
+    <div
+      class="calender-elements"
+      [ngClass]="{ 'calender-elements-bigScreen': !isSmallScreen }"
+      *ngFor="let el of numberArray; let i = index"
+    >
+      <div #calenderElement class="window">
+        <div class="text">
+          <p class="stars">✶</p>
+          <p>{{ el }}</p>
+        </div>
+      </div>
+      <div class="content">
+        <img
+          #img
+          (click)="openFullScreenImage(i); $event.stopPropagation()"
+          src="{{ imgs[i] }}"
+          alt="Advent-{{ el }}"
+        />
+      </div>
+    </div>
+    <!-- Full-Screen Image Overlay -->
+    <div
+      class="full-screen-overlay"
+      *ngIf="fullScreenImageIndex !== null"
+      [ngClass]="{ 'full-screen-overlay-bigScreen': !isSmallScreen }"
+    >
+      <div
+        [ngClass]="{ 'full-screen-image-container-bigScreen': !isSmallScreen }"
+        class="full-screen-image-container"
+      >
+        <img [src]="imgs[fullScreenImageIndex]" alt="Full-Screen Image" />
+        <div class="close-button" (click)="closeFullScreenImage()">Close</div>
+      </div>
+    </div>
+  </div>
+</div>

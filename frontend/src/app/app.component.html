@@ -1,6 +1,12 @@
 <div class="container">
-  <div *ngFor="let snow of snowArray" class="snow">❅</div>
+  <app-sparkle></app-sparkle>
+  <div class="animations">
+    <div *ngFor="let snow of snowArray" class="snow">❅</div>
+    <div *ngFor="let star of starArray" class="star">✴</div>
+    <div *ngFor="let star of starArray" class="star">·</div>
+  </div>
   <app-home></app-home>
+  <app-infos></app-infos>
   <app-calender></app-calender>
   <app-contact></app-contact>
   <app-footer></app-footer>

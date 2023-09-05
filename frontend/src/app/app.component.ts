@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Adventsfenster-Gruppe-Homepage';
   snows = 25;
+  stars = 20;
   snowArray = new Array(this.snows);
+  starArray = new Array(this.stars);
 }

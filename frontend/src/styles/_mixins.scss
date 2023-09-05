@@ -13,6 +13,18 @@
   font-weight: 400;
   text-align: center;
   justify-content: center;
+  @include respond(large-phone, portrait) {
+    font-size: 70px;
+  }
+  @include respond(large-phone, landscape) {
+    font-size: 70px;
+  }
+  @include respond(tablet) {
+    font-size: 70px;
+  }
+  @include respond(desktop) {
+    font-size: 70px;
+  }
 }
 @mixin font-h2 {
   font-family: "Libre Baskerville", serif;
@@ -25,12 +37,50 @@
   font-weight: 300;
   font-size: 18px;
   color: $gold-dark;
+  @include respond(large-phone, portrait) {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+  @include respond(large-phone, landscape) {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+  @include respond(tablet) {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+  @include respond(desktop) {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+}
+@mixin font-p-small {
+  color: #ffffffd7;
+  font-size: 14px;
+  font-weight: 200;
+  font-size: 18px;
 }
 @mixin font-p {
   color: #ffffffd7;
   font-size: 14px;
   font-weight: 200;
   font-size: 18px;
+  @include respond(large-phone, portrait) {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  @include respond(large-phone, landscape) {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  @include respond(tablet) {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  @include respond(desktop) {
+    font-size: 24px;
+    line-height: 1.1;
+  }
 }
 @mixin font-p-calender {
   font-family: "Libre Baskerville", serif;
@@ -74,4 +124,36 @@
   &:hover {
     background-color: $color-2;
   }
+}
+@mixin container {
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+@mixin linkColumn {
+  display: flex;
+  flex-direction: column;
+  background-color: #020a22d2;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+  box-shadow: rgba(78, 78, 86, 0.313) 0px 7px 29px 0px;
+}
+@mixin columnComponent {
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr;
+}
+
+@mixin linkRow {
+  flex-direction: row;
+  background-color: transparent;
+  right: 0;
+  top: auto;
+  height: auto;
+  width: auto;
+  box-shadow: none !important;
 }

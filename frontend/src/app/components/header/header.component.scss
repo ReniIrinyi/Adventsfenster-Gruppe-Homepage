@@ -1,0 +1,80 @@
+@import "../../../styles.scss";
+
+.header-container {
+  display: flex;
+  max-width: 100vw;
+  background-color: $background-color;
+  z-index: 300;
+
+  box-shadow: rgba(78, 78, 86, 0.313) 0px 7px 29px 0px;
+}
+.navbar-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & a {
+    display: flex;
+    text-decoration: none;
+  }
+  & p {
+    font-family: "Tangerine", cursive;
+    align-self: center;
+    font-size: 26px;
+    color: $gold;
+  }
+}
+.header-content {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 300;
+  padding: 2rem 3rem;
+}
+
+.links {
+  display: flex;
+  transition: all 1s;
+  justify-content: flex-start;
+  z-index: 9;
+  @include linkColumn;
+  &-bigScreen {
+    @include linkRow;
+  }
+}
+
+.btn {
+  display: flex;
+  z-index: inherit;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.sticky {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+fa-icon {
+  color: $gold-dark;
+  transition: all 1s;
+}
+fa-icon:hover {
+  color: $gold;
+}
+
+.transformX {
+  transform: translateX(300%);
+  opacity: 0;
+}
+.sticky {
+  position: fixed;
+  max-width: 100vw;
+  top: 0;
+  opacity: 0.9;
+  left: 0;
+}

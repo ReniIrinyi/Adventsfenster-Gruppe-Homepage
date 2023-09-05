@@ -27,6 +27,10 @@ export class MapComponent {
     lng: 8.005084927128237,
   };
   zoom = 14;
+  mapOptions: google.maps.MapOptions = {
+    center: this.center,
+    zoom: this.zoom,
+  };
   markerOptions: google.maps.MarkerOptions = {
     draggable: false,
   };

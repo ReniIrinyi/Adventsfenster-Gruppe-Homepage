@@ -7,6 +7,29 @@
   flex-direction: column;
   justify-content: center;
   padding: 3rem;
+  &-bigScreen {
+    width: 80%;
+  }
+  @include respond(large-phone, portrait) {
+    height: 100vh;
+    padding: 8rem;
+    justify-content: center;
+  }
+  @include respond(large-phone, landscape) {
+    height: 100vh;
+    padding: 8rem;
+    justify-content: center;
+  }
+  @include respond(tablet) {
+    height: 100vh;
+    padding: 8rem;
+    justify-content: center;
+  }
+  @include respond(desktop) {
+    height: 100vh;
+    padding: 8rem;
+    justify-content: center;
+  }
 }
 h1 {
   @include font-h1-Tangerine;

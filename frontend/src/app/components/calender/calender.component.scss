@@ -7,9 +7,25 @@
   height: 100%;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+
+  &-bigScreen {
+    padding: 3rem;
+  }
 }
 h1 {
   @include font-h1-Tangerine;
+  @include respond(large-phone, portrait) {
+    padding-top: 2rem;
+  }
+  @include respond(large-phone, landscape) {
+    padding-top: 2rem;
+  }
+  @include respond(tablet) {
+    padding-top: 2rem;
+  }
+  @include respond(desktop) {
+    padding-top: 2rem;
+  }
 }
 h2 {
   @include font-p;

@@ -1,0 +1,49 @@
+@import "../../../styles.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-start;
+  padding-right: 1rem;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-top: 10rem;
+  flex-direction: column;
+  &-bigScreen {
+    padding-top: 0rem !important;
+    flex-direction: row;
+  }
+}
+
+.list-item {
+  @include font-p-small;
+  transition: all 0.5s;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  justify-self: center;
+  font-weight: 300;
+  padding-bottom: 1rem;
+  &-bigScreen {
+    padding-top: 0rem !important;
+    padding-right: 3rem !important;
+    padding-bottom: 0rem !important;
+  }
+  &:hover {
+    color: $gold;
+  }
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+a {
+  cursor: pointer;
+}

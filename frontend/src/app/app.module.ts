@@ -27,6 +27,8 @@ import { SparkleComponent } from './components/sparkle/sparkle.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { InfosComponent } from './components/infos/infos.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LinksComponent } from './components/links/links.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -50,6 +52,8 @@ const appRoutes: Routes = [
     SparkleComponent,
     MapComponent,
     InfosComponent,
+    HeaderComponent,
+    LinksComponent,
   ],
   imports: [
     BrowserModule,

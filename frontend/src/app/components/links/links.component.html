@@ -1,0 +1,40 @@
+<div class="container">
+  <ul class="list" [ngClass]="{ 'list-bigScreen': !isSmallScreen }">
+    <li>
+      <a
+        class="list-item"
+        [ngClass]="{ 'list-item-bigScreen': !isSmallScreen }"
+        (click)="changeIcon()"
+        (click)="handleLinkClick('home')"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        class="list-item"
+        [ngClass]="{ 'list-item-bigScreen': !isSmallScreen }"
+        (click)="changeIcon()"
+        (click)="handleLinkClick('infos')"
+        >Aktuelles</a
+      >
+    </li>
+    <li>
+      <a
+        class="list-item"
+        [ngClass]="{ 'list-item-bigScreen': !isSmallScreen }"
+        (click)="changeIcon()"
+        (click)="handleLinkClick('adventsfenster')"
+        >Adventsfenster</a
+      >
+    </li>
+    <li>
+      <a
+        class="list-item"
+        [ngClass]="{ 'list-item-bigScreen': !isSmallScreen }"
+        (click)="changeIcon()"
+        (click)="handleLinkClick('contact')"
+        >Kontakt</a
+      >
+    </li>
+  </ul>
+</div>

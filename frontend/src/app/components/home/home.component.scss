@@ -13,11 +13,41 @@
   &-bigScreen {
     width: 80%;
   }
+  @include respond(large-phone, portrait) {
+    height: 100vh;
+    justify-content: center;
+  }
+  @include respond(large-phone, landscape) {
+    height: 100vh;
+    justify-content: center;
+  }
+  @include respond(tablet) {
+    height: 100vh;
+    justify-content: center;
+  }
+  @include respond(desktop) {
+    height: 100vh;
+    justify-content: center;
+  }
+
+  & > * {
+    @include respond(large-phone, portrait) {
+      padding: 4rem;
+    }
+    @include respond(large-phone, landscape) {
+      padding: 4rem;
+    }
+    @include respond(tablet) {
+      padding: 4rem;
+    }
+    @include respond(desktop) {
+      padding: 4rem;
+    }
+  }
 }
-h2 {
-  @include font-h1-Tangerine;
-  color: #fff;
-  filter: brightness(1);
+
+strong {
+  color: $gold;
 }
 
 h1 {

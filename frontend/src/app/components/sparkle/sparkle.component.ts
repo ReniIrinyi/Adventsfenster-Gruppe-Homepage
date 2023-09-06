@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sparkle.component.scss'],
 })
 export class SparkleComponent implements OnInit {
-  numberOfStars = 100;
+  numberOfStars = 150;
   sparkleCount = new Array(this.numberOfStars);
   stars: number[] = [];
 

@@ -1,5 +1,10 @@
 @import "../styles.scss";
-
+.app-content {
+  @include respond(desktop) {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
 .container {
   display: flex;
   flex-direction: column;

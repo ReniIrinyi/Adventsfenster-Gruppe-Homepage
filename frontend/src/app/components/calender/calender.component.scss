@@ -7,10 +7,19 @@
   height: 100%;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+  position: relative;
 
   &-bigScreen {
     padding: 3rem;
   }
+}
+
+app-map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 3rem;
 }
 h1 {
   @include font-h1-Tangerine;
@@ -52,6 +61,7 @@ h2 {
     overflow: hidden;
     display: flex;
     flex-direction: row;
+    border: 0.1px solid rgba(20, 30, 57, 0.26);
     background-color: $background-color-grey;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.499);
     border-radius: 10px;
@@ -121,7 +131,7 @@ h2 {
 
   & .text {
     width: 90%;
-    height: 100%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -131,6 +141,15 @@ h2 {
     font-size: 10px;
     z-index: 1;
     align-self: flex-end;
+    @include respond(tablet, portrait) {
+      font-size: 16px;
+    }
+    @include respond(tablet, portrait) {
+      font-size: 16px;
+    }
+    @include respond(desktop) {
+      font-size: 16px;
+    }
   }
   p {
     @include font-p-calender;

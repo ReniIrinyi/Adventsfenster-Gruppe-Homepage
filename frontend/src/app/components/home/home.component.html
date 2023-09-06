@@ -3,21 +3,20 @@
   id="home"
   class="home-container"
 >
+  <app-sparkle></app-sparkle>
   <div>
     <h1>Adventsfenster-Gruppe</h1>
   </div>
   <div>
     <p>
-      Die Adventsfenster-Gruppe ist eine freiwillige Gemeinschaft von Einwohnern
-      aus Bottenwil, die bereits seit
+      Die Adventsfenster-Gruppe ist eine freiwillige Gemeinschaft bestehend aus
+      Einwohnern der Gemeinde Bottenwil, die bereits seit
       <strong> 25 Jahren </strong>
-      besteht. Ihr Ziel ist es, Bottenwil in der Adventszeit mit schön
-      gestalteten Adventsfenstern zu verschönern und die Anwohner
-      zusammenzubringen.
+      existiert. Ihr Ziel ist es, ganz Bottenwil mit schön gestalteten
+      Adventsfenstern zu erfreuen und bei Anlässen zusammen zu bringen.
     </p>
     <div class="buttons">
       <button class="btn share-button" [matMenuTriggerFor]="shareMenu">
-        <fa-icon [icon]="faGift"></fa-icon>
         Teile die Freude
       </button>
       <mat-menu #shareMenu="matMenu">
@@ -26,7 +25,9 @@
         <button mat-menu-item (click)="shareOnWhatsApp()">WhatsApp</button>
         <!-- Add more social media options as needed -->
       </mat-menu>
-      <a class="btn btn-a" href="#contact">Sage uns Hallo</a>
+      <a class="btn btn-a" (click)="handleLinkClick('contact')">
+        Sage uns Hallo
+      </a>
     </div>
   </div>
 

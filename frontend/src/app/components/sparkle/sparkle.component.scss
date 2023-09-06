@@ -12,7 +12,7 @@
   color: $gold;
   font-size: 5px;
   z-index: 2;
-  @for $i from 1 through 100 {
+  @for $i from 1 through 150 {
     $random-blur: random(1);
     $random-scale: random(40000) * 0.0001;
     $delay: random(3) * 5s;

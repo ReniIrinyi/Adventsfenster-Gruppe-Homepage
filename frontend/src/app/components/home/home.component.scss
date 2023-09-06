@@ -15,19 +15,19 @@
     width: 80%;
   }
   @include respond(large-phone, portrait) {
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
   }
   @include respond(large-phone, landscape) {
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
   }
   @include respond(tablet) {
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
   }
   @include respond(desktop) {
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
   }
 
@@ -64,6 +64,7 @@ p {
 
 .btn {
   @include btn($gold-light-transparent, $gold-regular-transparent, $text-dark);
+
   &-a {
     @include btn($grey-light-transparent, $grey-regular-transparent, #fff);
   }

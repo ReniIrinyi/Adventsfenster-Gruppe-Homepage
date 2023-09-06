@@ -117,10 +117,11 @@
   background-color: $color-1;
   margin: 0.5rem;
   border: none;
-  color: $text-color;
+  color: $text-color !important;
   padding: 1rem 1.2rem;
   border-radius: 9px;
   text-decoration: none;
+  @include font-p-small;
   &:hover {
     background-color: $color-2;
   }

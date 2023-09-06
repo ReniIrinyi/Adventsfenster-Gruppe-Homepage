@@ -131,14 +131,11 @@ export class MapComponent {
     const lat = markerPosition.lat;
     const lng = markerPosition.lng;
 
-    // Construct the Google Maps URL
     const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
 
-    // Show a confirmation dialog
     const openInNewTab = window.confirm('Open Google Maps in a new tab?');
 
     if (openInNewTab) {
-      // Open the URL in a new tab
       window.open(googleMapsUrl, '_blank');
     }
   }

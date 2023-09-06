@@ -11,7 +11,7 @@ export class SparkleComponent implements OnInit {
   stars: number[] = [];
 
   ngOnInit(): void {
-    const maxDelay = 3;
+    const maxDelay = 10;
 
     for (let i = 0; i < this.numberOfStars; i++) {
       const randomDelay = Math.random() * maxDelay;

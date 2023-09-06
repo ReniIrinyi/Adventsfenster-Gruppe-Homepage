@@ -9,7 +9,16 @@
   padding: 2rem 1.5rem;
   position: relative;
 
-  &-bigScreen {
+  @include respond(large-phone, portrait) {
+    padding: 3rem;
+  }
+  @include respond(large-phone, landscape) {
+    padding: 3rem;
+  }
+  @include respond(tablet) {
+    padding: 3rem;
+  }
+  @include respond(desktop) {
     padding: 3rem;
   }
 }

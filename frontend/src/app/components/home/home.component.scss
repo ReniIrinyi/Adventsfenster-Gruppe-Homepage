@@ -64,9 +64,10 @@ p {
 
 .btn {
   @include btn($gold-light-transparent, $gold-regular-transparent, $text-dark);
-
+  @include font-p-small;
   &-a {
     @include btn($grey-light-transparent, $grey-regular-transparent, #fff);
+    @include font-p-small;
   }
 }
 

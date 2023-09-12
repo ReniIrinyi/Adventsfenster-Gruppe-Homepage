@@ -9,13 +9,8 @@ $config = parse_ini_file('config.ini', true);
 $mail = new PHPMailer(true);
 
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Methods: POST, GET");
 header("Access-Control-Allow-Headers: Content-Type");
-
-if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
-    http_response_code(200);
-    exit;
-}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST["name"] ?? '';
@@ -30,40 +25,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $to =  $config['email']['username'];
     $subject = "neue Anfrage";
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-
-    //  SMTP server settings
-    $smtpServer = $config['email']['server'];
-    $smtpPort = 587;
-    $smtpAuth = true;
-    $smtpUsername = $config['email']['username']; 
-    $smtpPassword = $config['email']['password']; ;
-   
+    
     try {
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;   
         $mail->isSMTP();
-        $mail->Host = $smtpServer;
-        $mail->SMTPAuth = $smtpAuth;
-        $mail->Username = $smtpUsername;
-        $mail->Password = $smtpPassword;
-        // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        //implicit TLS encrypton =>dont work
-        $mail->SMTPSecure = 'tls'; //  TLS encryption
-        $mail->Port = $smtpPort;
+        $mail->Host = $config['email']['server'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $config['email']['username'];
+        $mail->Password = $config['email']['password'];
+        $mail->SMTPSecure = 'tls'; // TLS encryption
+        $mail->Port = 587;
 
-        
         $mail->isHTML(true);     
         $mail->setFrom($email);
         $mail->addAddress($to);
         $mail->Subject = $subject;
         $mail->Body = $message;
 
-
         $mail->send();
-
+        
+        // Send a JSON response to indicate success
         http_response_code(200);
         echo json_encode(array("message" => "Form submission successful."));
     } catch (Exception $e) {
+        // Send a JSON response to indicate error
         http_response_code(500);
         echo json_encode(array("error" => "An error occurred while sending the email: " . $mail->ErrorInfo));
     }

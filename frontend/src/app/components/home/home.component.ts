@@ -17,10 +17,14 @@ export class HomeComponent implements OnInit {
   sponsorenUrls = [
     '../../../assets/imgs/sponsoren/ruegger-optik.jpg',
     '../../../assets/imgs/sponsoren/antica-posta.png',
+    '../../../assets/imgs/sponsoren/Metzgerei-Klauser.jpg',
+    '../../../assets/imgs/sponsoren/Volg.png',
   ];
   sponsorenLinks = [
     'https://www.rueegger-optik.ch/',
     'https://allantica-posta.ch/',
+    'https://www.metzgerei-klauser.ch/',
+    'https://www.volg.ch/standorte-oeffnungszeiten/detail/volg-bottenwil/?tx_kochvolgstores_storedetail%5Blocation%5D=Bottenwil%2C%20Schweiz&tx_kochvolgstores_storedetail%5Blongitude%5D=8.0065334999999&tx_kochvolgstores_storedetail%5Blatitude%5D=47.2857941&tx_kochvolgstores_storedetail%5Bopen%5D=',
   ];
   currentSponsorIndex = 0;
   isSmallScreen = false;

@@ -8,28 +8,31 @@
 @mixin font-h1-Tangerine {
   font-family: "Tangerine", cursive;
   line-height: 0.9;
-  font-size: 56px;
+  font-size: 4rem;
   color: $gold;
   font-weight: 400;
   text-align: center;
   justify-content: center;
   @include respond(large-phone, portrait) {
-    font-size: 70px;
+    font-size: 6rem;
   }
   @include respond(large-phone, landscape) {
-    font-size: 70px;
+    font-size: 8rem;
   }
-  @include respond(tablet) {
-    font-size: 70px;
+  @include respond(tablet, portrait) {
+    font-size: 8rem;
+  }
+  @include respond(tablet, landscape) {
+    font-size: 12rem;
   }
   @include respond(desktop) {
-    font-size: 70px;
+    font-size: 12rem;
   }
 }
 @mixin font-h2 {
   font-family: "Libre Baskerville", serif;
   font-weight: 800;
-  font-size: 35px;
+  font-size: 3rem;
   margin-bottom: 2rem;
   color: #fff;
 }
@@ -38,45 +41,49 @@
   font-size: 18px;
   color: $gold-dark;
   @include respond(large-phone, portrait) {
-    font-size: 26px;
+    font-size: 3.5rem;
     line-height: 1.1;
   }
   @include respond(large-phone, landscape) {
-    font-size: 26px;
+    font-size: 3.5rem;
     line-height: 1.1;
   }
-  @include respond(tablet) {
-    font-size: 26px;
+  @include respond(tablet, portrait) {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+  @include respond(tablet, landscape) {
+    font-size: 4rem;
     line-height: 1.1;
   }
   @include respond(desktop) {
-    font-size: 26px;
+    font-size: 4rem;
     line-height: 1.1;
   }
 }
-@mixin font-p-small {
-  color: #ffffffd7;
-  font-size: 14px;
-  font-weight: 300;
-}
+
 @mixin font-p {
   color: #ffffffd7;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: 200;
   @include respond(large-phone, portrait) {
-    font-size: 24px;
+    font-size: 1.6rem;
     line-height: 1.1;
   }
   @include respond(large-phone, landscape) {
-    font-size: 24px;
+    font-size: 1.6rem;
     line-height: 1.1;
   }
-  @include respond(tablet) {
-    font-size: 24px;
+  @include respond(tablet, portrait) {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+  @include respond(tablet, landscape) {
+    font-size: 2.8rem;
     line-height: 1.1;
   }
   @include respond(desktop) {
-    font-size: 24px;
+    font-size: 2.8rem;
     line-height: 1.1;
   }
 }
@@ -100,7 +107,7 @@
   @include respond(tablet, portrait) {
     font-size: 7rem;
   }
-  @include respond(tablet, portrait) {
+  @include respond(tablet, landscape) {
     font-size: 7rem;
   }
   @include respond(desktop) {

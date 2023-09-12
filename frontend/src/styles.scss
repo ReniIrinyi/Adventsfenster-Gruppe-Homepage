@@ -56,3 +56,9 @@ body {
 .mat-mdc-card {
   background-color: transparent !important;
 }
+.mat-mdc-form-field {
+  @include font-p;
+}
+button {
+  @include font-p;
+}

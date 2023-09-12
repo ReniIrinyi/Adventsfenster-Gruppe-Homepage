@@ -31,7 +31,7 @@
         class="input-element"
         class="input-element"
         matInput
-        placeholder="Message"
+        placeholder="Nachricht"
         [(ngModel)]="formData.message"
         name="message"
         required
@@ -39,5 +39,15 @@
     </mat-form-field>
 
     <button class="btn" type="submit">Senden</button>
+    <div *ngIf="status">
+      <p *ngIf="sent">
+        Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen
+        melden.
+      </p>
+      <p *ngIf="notSent">
+        Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen
+        Sie es erneut.
+      </p>
+    </div>
   </form>
 </div>

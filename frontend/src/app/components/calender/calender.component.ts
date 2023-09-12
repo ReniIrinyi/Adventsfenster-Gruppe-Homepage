@@ -43,7 +43,7 @@ export class CalenderComponent implements OnInit, AfterViewInit {
   today = this.currentDate.getDate();
   // allowedDate = new Date(this.currentDate.getFullYear(), 11, 1); // December 1st of the current year
   allowedDates: Date[] = this.numberArray.map(
-    (el) => new Date(this.currentDate.getFullYear(), 8, el) //set to september
+    (el) => new Date(this.currentDate.getFullYear(), 11, el) //set to december
   );
 
   constructor(
@@ -58,8 +58,6 @@ export class CalenderComponent implements OnInit, AfterViewInit {
       this.isSmallScreen = isSmall;
     });
     this.imgs = this.dataService.getImgs();
-
-
   }
   ngAfterViewInit() {
     this.calendarElements.forEach((elementRef, index) => {

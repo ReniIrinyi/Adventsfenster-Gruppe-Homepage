@@ -111,3 +111,18 @@
     }
   }
 }
+
+.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 3rem 0;
+  width: 100%;
+  height: auto;
+}
+h2 {
+  padding: 2rem;
+  text-align: center;
+  @include font-p;
+}

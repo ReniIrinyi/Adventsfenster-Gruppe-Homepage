@@ -21,7 +21,7 @@
 }
 
 .list-item {
-  @include font-p-small;
+  @include font-p;
   transition: all 0.5s;
   text-decoration: none;
   position: relative;

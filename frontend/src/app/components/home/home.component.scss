@@ -14,22 +14,6 @@
   &-bigScreen {
     width: 80%;
   }
-  @include respond(large-phone, portrait) {
-    height: 80vh;
-    justify-content: center;
-  }
-  @include respond(large-phone, landscape) {
-    height: 80vh;
-    justify-content: center;
-  }
-  @include respond(tablet) {
-    height: 80vh;
-    justify-content: center;
-  }
-  @include respond(desktop) {
-    height: 80vh;
-    justify-content: center;
-  }
 
   & > * {
     @include respond(large-phone, portrait) {
